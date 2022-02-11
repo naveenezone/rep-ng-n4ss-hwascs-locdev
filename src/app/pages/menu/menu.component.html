@@ -1,0 +1,96 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" [routerLink]="['/home']">{{ projectName }}</a>
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarNav"
+    aria-controls="navbarNav"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li
+        class="nav-item"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        <a
+          class="nav-link"
+          *ngIf="authService.isUserLoggedIn()"
+          [routerLink]="['/home']"
+          >Home <span class="sr-only">(current)</span></a
+        >
+      </li>
+      <li
+        class="nav-item"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        <a
+          class="nav-link"
+          *ngIf="authService.isUserLoggedIn()"
+          [routerLink]="['/resources']"
+          >Resource Manager</a
+        >
+      </li>
+      <li
+        class="nav-item"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        <a class="nav-link" [routerLink]="['/blog']">Blog</a>
+      </li>
+      <li
+        class="nav-item"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        <a class="nav-link" [routerLink]="['/contact']">Contact Us</a>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Drop Down -->
+  <ul class="navbar-nav navbar-center">
+    <li class="nav-item">
+      <a
+        class="nav-link"
+        *ngIf="!authService.isUserLoggedIn()"
+        [routerLink]="['/login']"
+        >Login</a
+      >
+    </li>
+    <li>
+      <div class="col">
+        <br />
+        <div ngbDropdown>
+          <button
+            *ngIf="authService.isUserLoggedIn()"
+            class="btn rounded-pill btn-primary ml-2 mt-4 mt-sm-0"
+            id="gfg"
+            ngbDropdownToggle
+          >
+            Profile [{{ getUsername() }}]
+          </button>
+          <div ngbDropdownMenu="gfg">
+            <button ngbDropdownItem (click)="open_dashboard()">
+              Dashboard
+            </button>
+            <button ngbDropdownItem (click)="reset_pwd()">
+              Reset Password
+            </button>
+            <button ngbDropdownItem (click)="authService_logout()">
+              Logout
+            </button>
+          </div>
+        </div>
+      </div>
+    </li>
+    <!-- Drop Down -->
+  </ul>
+</nav>

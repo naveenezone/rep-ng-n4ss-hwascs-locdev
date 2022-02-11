@@ -1,0 +1,43 @@
+<h3>Page not found</h3>
+<br />
+<p>
+  The page you are looking for isn't avialable. If you still need help, Please
+  visit out Help Page.
+  <button class="btn btn-lg btn-outline-primary" (click)="open(mymodal)">
+    Click Here
+  </button>
+</p>
+<ng-template #mymodal let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Support</h4>
+    <button
+      type="button"
+      class="close"
+      aria-label="Close"
+      (click)="modal.dismiss('Cross click')"
+    >
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Cursus metus aliquam
+    eleifend mi in nulla posuere sollicitudin. Semper eget duis at tellus. Sit
+    amet justo donec enim diam vulputate ut pharetra sit. Donec pretium
+    vulputate sapien nec sagittis. Ornare massa eget egestas purus viverra
+    accumsan in. Molestie at elementum eu facilisis sed. Mauris augue neque
+    gravida in fermentum et. Orci eu lobortis elementum nibh tellus molestie
+    nunc. Ultricies lacus sed turpis tincidunt. Eget nunc lobortis mattis
+    aliquam. Orci ac auctor augue mauris augue neque. Tempor id eu nisl nunc.
+    Maecenas pharetra convallis posuere morbi.
+  </div>
+  <div class="modal-footer">
+    <button
+      type="button"
+      class="btn btn-outline-dark"
+      (click)="modal.close('Save click')"
+    >
+      Ok
+    </button>
+  </div>
+</ng-template>
