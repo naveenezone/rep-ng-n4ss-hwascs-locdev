@@ -12,6 +12,7 @@ import { WelcomeComponent } from './welcome/welcome.component';
 // const routes: Routes = [];
 const routes: Routes = [
   { path: '', component: IndexComponent },
+  { path: 'index.html', component: IndexComponent },
   { path: 'index', component: IndexComponent },
   { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
